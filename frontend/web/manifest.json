@@ -1,0 +1,11 @@
+{
+    "name": "Diamond Painting Generator",
+    "short_name": "DiamondPaint",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2196F3",
+    "description": "Convert photos to diamond painting patterns",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false
+}

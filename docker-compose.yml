@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DEFAULT_GRID_W=100
+      - DEFAULT_GRID_H=140
+      - MAX_UPLOAD_MB=15
+      - OUTPUT_DPI=300
+      - CORS_ORIGINS=*
+    volumes:
+      - ./backend:/app
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
+  # Note: Flutter web frontend should be served separately or via nginx
+  # Build frontend with: cd frontend && flutter build web
+  # Then serve frontend/build/web/ with a web server
